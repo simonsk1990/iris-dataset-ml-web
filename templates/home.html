@@ -1,0 +1,22 @@
+<h1>Iris flowers model prediction  </h1>
+<h2>Simple ML model deployed: 1000 epochs graph </h2>
+<form  method="POST">
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+
+    <br>
+    <img src="{{url_for('static', filename='acc_valAcc.png')}}" align="middle" />
+    <img src="{{url_for('static', filename='loss_valLoss.png')}}" align="middle" />
+    <br>
+    <h2>Please enter your flower measurements below:</h2>
+    <br>
+    {{ form.sep_len.label }} {{form.sep_len}}
+    <br>
+    {{ form.sep_wid.label}} {{form.sep_wid}}
+    <br>
+    {{form.pet_len.label}}{{form.pet_len}}
+    <br>
+    {{form.pet_wid.label}}{{form.pet_wid}}
+    <br>
+    {{ form.submit() }}
+</form>
